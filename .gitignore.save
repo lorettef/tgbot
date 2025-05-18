@@ -1,0 +1,39 @@
+token.txt
+.gitignore
+
+# Go-specific ignores
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+tmp/
+*.test
+*.prof
+
+# SQLite database
+watched.db
+
+# Configuration files with sensitive data
+config.yaml
+
+# Dependency directories (if using go mod vendor)
+vendor/
+
+# Logs
+*.log
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage.out
