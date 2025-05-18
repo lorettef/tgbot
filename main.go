@@ -6,7 +6,7 @@ import (
     "fmt"
     "log"
     "net/http"
-    "os"
+    "net/url" // Added for url.QueryEscape
     "strings"
     "time"
 
@@ -217,9 +217,9 @@ func handleSearch(chatID int64, query string) {
 
 func searchTMDB(query string) (TMDBResponse, error) {
     var response TMDBResponse
-    url := fmt.Sprintf("https://api.themoviedb.org/3/search/multi?api_key=%s&query=%s", tmdbKey, url.QueryEscape(query))
+    urlStr := fmt.Sprintf("https://api.themoviedb.org/3/search/multi?api_key=%s&query=%s", tmdbKey, url.QueryEscape(query))
     
-    resp, err := http.Get(url)
+    resp, err := http.Get(urlStr)
     if err != nil {
         return response, err
     }
